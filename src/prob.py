@@ -82,3 +82,20 @@ def prob206(arr, perm):
         arr_return.append(arr[item])
 
     return arr_return
+
+# Problem 211: Given a string and a pattern, find the starting indices of all occurences
+# of the pattern in the string. For example, given the string "abracadabra" and the pattern "abr", you should
+# return [0,7]
+
+def prob211(str, patt):
+
+    if len(patt)>len(str):
+        print("invalid pattern and string")
+        return
+    else:
+        list_occ = []
+        for i in range(0, len(str)-len(patt)+1):
+            if str[i:len(patt)+i] == patt:
+                list_occ.append(i);
+
+        return list_occ

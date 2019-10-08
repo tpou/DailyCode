@@ -1,5 +1,5 @@
-from src.prob import prob206
+from src.prob import prob211
 
-print(prob206(["a","b","c"],[2,1,0]))
+print(prob211("abcdefabsdfabsasbabc","abc"))
 
 
