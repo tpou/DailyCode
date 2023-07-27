@@ -99,3 +99,36 @@ def prob211(str, patt):
                 list_occ.append(i);
 
         return list_occ
+
+
+# Problem 1439: Given a 2D matrix of characters and a target word, write a function that returns whether the word can be found
+# in the matrix by going left-to-right or up-to-down
+# For example given the following matrix:
+# [['F','A','C','I'],
+#  ['O','B','Q','P'],
+#  ['A','N','O','B'],
+#  ['M','A','S','S']] 
+# and the target word 'FOAM', you should return TRUE since it's the leftmost column
+# Similarly, given the target word 'MASS', you should return TRUE since its the last row
+
+def prob1439(maxtr,target):
+    import numpy as np
+    # convert 2 numpy array
+    maxtr = np.array(maxtr)
+    n,m = maxtr.shape
+    
+    # left-right checking:
+    for i in range(n):
+        source = ''
+        for j in range(m):
+            source = source + maxtr[i][j]
+        if source == target:
+            return True
+            
+    # top-down checking:
+    for i in range(m):
+        source = ''
+        for j in range(n):
+            source = source + maxtr[j][i]
+        if source == target:
+            return True    
