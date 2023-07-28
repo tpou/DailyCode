@@ -1,10 +1,5 @@
-from src.prob import prob1439
+from src.prob import prob1463
 import numpy as np
 
-A = [['F','A','C','I'],
-     ['O','B','Q','P'],
-     ['A','N','O','B'],
-     ['M','A','S','S']]
-nA = np.array(A)
-target = 'CQOS'
-print(prob1439(A,target))
+arrint = [3,4,8,6,7,10]
+print(prob1463(arrint))

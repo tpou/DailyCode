@@ -101,7 +101,7 @@ def prob211(str, patt):
         return list_occ
 
 
-# Problem 1439: Given a 2D matrix of characters and a target word, write a function that returns whether the word can be found
+# Problem 1439[Easy]: Given a 2D matrix of characters and a target word, write a function that returns whether the word can be found
 # in the matrix by going left-to-right or up-to-down
 # For example given the following matrix:
 # [['F','A','C','I'],
@@ -132,3 +132,33 @@ def prob1439(maxtr,target):
             source = source + maxtr[j][i]
         if source == target:
             return True    
+    return False
+    
+# Problem 1463[Easy]: Given an array of integers, determine whether it contains a Pythagorean triplet. Recall that a Pythagorean triplet
+# (a,b,c) is defined by the equation a^2 + b^2 = c^2 
+
+def prob1463(arrint):
+# First, square each element in the array
+    arrint_sq = [x*x for x in arrint]
+    arrint_sq.sort() # sort the square array in the ascending order
+    n = len(arrint_sq)
+    # move c from the largest value, a from left, b from right just 1 order from c
+    # checking the pythago conditions, if not move a and b accordingly until they coincidently meet. Loop the next c
+    for i in range(n-1,1,-1):
+        c = arrint_sq[i]
+        left, right = 0, i-1
+        a = arrint_sq[0]
+        b = arrint_sq[i-1]
+
+        while left < right:
+            a = arrint_sq[left]
+            b = arrint_sq[right]
+            if a + b == c:
+                return True
+            elif a + b > c:
+                right -=1
+            else:
+                left +=1    
+
+    return False
+         
