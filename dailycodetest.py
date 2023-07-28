@@ -1,5 +1,5 @@
-from src.prob import prob1463
-import numpy as np
+from src.prob import prob1436
 
-arrint = [3,4,8,6,7,10]
-print(prob1463(arrint))
+
+arr=[5,1,3,5,2,3,4,1]
+print(prob1436(arr))

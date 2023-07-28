@@ -134,6 +134,38 @@ def prob1439(maxtr,target):
             return True    
     return False
     
+# Problem 1456[Easy]: Given a string, returing the first recurring character in it or null if 
+# there is no recurring character
+# For example, given the string "acbbac", return "b". Given the string "abcdef", return null
+
+# Problem 1436[Easy]: Given an array of elements, return the length of the longest subarray where
+# all its elements are distinct
+# For example, given the array [5,1,3,5,2,3,4,1] return 5 as the longest subarray of distinct element
+# [5,2,3,4,1]
+
+
+# Problem 1453[Easy]: The same as problem 206
+
+def prob1456(str):
+    for idx, char in enumerate(str):
+        i = idx
+        while i < (len(str)-1):
+            if char == str[i+1]:
+                return char
+            else:
+                i+=1
+    return None
+
+# Problem 1460[Easy]: a fixed point in an array is an element whose value is equal to its index.
+# Given a sorted array of distinct elements, return a fixed point if exists. Otherwise, return False
+# For example, given [-6,0,2,40] return 2. Given [1,5,7,8] return False
+
+def prob1460(arr):
+    for idx, ele in enumerate(arr):
+        if idx == ele:
+            return ele
+    return False    
+
 # Problem 1463[Easy]: Given an array of integers, determine whether it contains a Pythagorean triplet. Recall that a Pythagorean triplet
 # (a,b,c) is defined by the equation a^2 + b^2 = c^2 
 
@@ -161,4 +193,5 @@ def prob1463(arrint):
                 left +=1    
 
     return False
-         
+
+
