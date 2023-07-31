@@ -100,6 +100,26 @@ def prob211(str, patt):
 
         return list_occ
 
+# Probelm 1414[Easy]: Determine whether there exists one-to-one character mapping from one string s1 to another s2
+# For example, given s1='abc' and s2='def' return True since we can map a to d, b to e, and c to f
+# Given s1='foo' and s2='bar' return False because 'o' cannot map to two characters
+
+def prob1414(s1,s2):
+    if len(s1) != len(s2):
+        print('Two strings must have the same length!')
+        return
+    else:
+        mydict = {}
+        for idx, char in enumerate(s1):
+            mydict[s1[idx]] = s2[idx]
+            
+        mykeys = list(mydict.keys())
+        mykeys.sort()
+
+        mydict_sort = {i:mydict[i] for i in mykeys}
+
+        a= mydict_sort.popitem()
+        return a
 
 # Problem 1439[Easy]: Given a 2D matrix of characters and a target word, write a function that returns whether the word can be found
 # in the matrix by going left-to-right or up-to-down
